@@ -6,7 +6,8 @@ class BaseUser(BaseModel):
     username: str
 
 class UserRoles(BaseUser):
-    roles: str
+    name: str
+    surname: str
 
 class UserCreate(UserRoles):
     password: str
@@ -18,14 +19,16 @@ class UserCreate(UserRoles):
 
 class User(BaseUser):
     id: int
-    roles: str
+    name: str
+    surname: str
 
     class Config:
         orm_mode = True
 
 class UserCreate2(BaseModel):
     id: int
-    roles: str
+    name: str
+    surname: str
     password: str
     username: str
 

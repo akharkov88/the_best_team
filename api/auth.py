@@ -30,6 +30,11 @@ async def root(request: Request):
     return templates.TemplateResponse(
         "index.html", {"request": request}
     )
+@router.get("/signup")
+async def root(request: Request):
+    return templates.TemplateResponse(
+        "signup.html", {"request": request}
+    )
 
 @router.post(
     '/sign-up/',
