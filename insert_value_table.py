@@ -22,8 +22,12 @@ async_engine = create_async_engine(url=Settings.database_url,
 #         print(f"{res.first()=}")
 # asyncio.run(get_123())
 
-print("Удаляю таблицы")
-Base.metadata.drop_all(engine)
+def drop_create():
+    print("Удаляю таблицы")
+    Base.metadata.drop_all(engine)
 
-print("Создаю таблицы")
-Base.metadata.create_all(engine)
+    print("Создаю таблицы")
+    Base.metadata.create_all(engine)
+
+if __name__ == "__main__":
+    drop_create()

@@ -1,5 +1,6 @@
 import uvicorn
 from settings import Settings
+from insert_value_table import drop_create
 from api import router
 from pathlib import Path
 from fastapi.staticfiles import StaticFiles
@@ -46,6 +47,8 @@ app.mount(
 
 
 if __name__ == '__main__':
+    drop_create()
+
     uvicorn.run(
         "main:app",
         reload=True,
